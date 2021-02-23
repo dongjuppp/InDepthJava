@@ -8,21 +8,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Sample sample=new Sample();
-        Sample sample2=new Sample();
-        Coin coin=new Coin();
-        coin.setMoney(100);
+        Test test=new Test();
+        new Thread(()->{
+            test.foo();
+        }).start();
 
-        sample.setValue(1);
-        sample2.setValue(-1);
+        new Thread(()->{
+            test.voo();
+        }).start();
 
-        sample.setCoin(coin);
-        sample2.setCoin(coin);
-
-        sample.start();
-        sample2.start();
-
-
-
+        new Thread(()->{
+            test.zoo();
+        }).start();
     }
 }
